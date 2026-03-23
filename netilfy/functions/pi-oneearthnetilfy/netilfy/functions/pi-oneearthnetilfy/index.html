@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiOneEarth - المرحلة 10 الدفع</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding-top: 60px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        #payButton {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #payButton:hover {
+            background-color: #e65c00;
+        }
+        #status {
+            margin-top: 25px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>إتمام المرحلة 10 من التطوير</h1>
+<button id="payButton">ادفع 0.01 Pi الآن</button>
+<div id="status"></div>
+
+<script>
+    const payButton = document.getElementById("payButton");
+    const statusDiv = document.getElementById("status");
+
+    payButton.addEventListener("click", function() {
+        statusDiv.textContent = "جارٍ تحويلك إلى بوابة الدفع Pi...";
+        
+        // رابط دفع Pi مخصص – استبدل 'YourPiUsername' باسم مستلم Pi الخاص بك
+        const paymentAmount = 0.01; // قيمة الدفع
+        const receiver = "YourPiUsername"; // ضع اسم مستخدم Pi الخاص بك هنا
+        const paymentUrl = `https://pi-network.com/pay?amount=${paymentAmount}&receiver=${receiver}&note=مرحلة10`;
+
+        // فتح نافذة جديدة للدفع
+        window.open(paymentUrl, "_blank");
+
+        statusDiv.textContent = "تم فتح بوابة الدفع. أكمل العملية لإتمام المرحلة 10.";
+    });
+</script>
+
+</body>
+</html>
